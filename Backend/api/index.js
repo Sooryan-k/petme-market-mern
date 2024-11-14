@@ -25,5 +25,5 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/payment", razorpayRoutes);
 
 
-// export the app for Vercel
+// exporting the app for Vercel
 module.exports = app;
