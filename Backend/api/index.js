@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 //for handling user-related endpoints
-app.use("/api", userRoutes);
+app.use("/api/users", userRoutes);
 
 //listing
 app.use("/api/pet-listing", petListingRoutes);
@@ -35,6 +35,11 @@ app.use("/api/cart",cartRoutes)
 //payment
 
 app.use("/api/payment", razorpayRoutes);
+
+app.get("/api/test", (req, res) => {
+  res.send("Test route is working!");
+});
+
 
 
 module.exports = app; 

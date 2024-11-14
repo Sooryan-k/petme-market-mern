@@ -26,3 +26,4 @@ yarn-error.log*
 
 # optional backend-specific ignores
 /.env.example  # ignore example env files if you use them
+.vercel
