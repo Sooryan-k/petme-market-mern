@@ -1,8 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback
-} from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Wishlist.css";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -34,7 +30,7 @@ function Wishlist() {
     }
     try {
       const response = await fetch(
-        `http://localhost:5001/api/wishlist/user/${currentUser.uid}`
+        `${process.env.REACT_APP_APPLICATION_URL}/api/wishlist/user/${currentUser.uid}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -60,7 +56,6 @@ function Wishlist() {
     navigate(`/view/${id}`);
   };
 
-
   const handleDeleteClick = async (petId) => {
     if (!currentUser) {
       toast.error("Please login to delete items");
@@ -68,7 +63,7 @@ function Wishlist() {
     }
     try {
       const response = await fetch(
-        `http://localhost:5001/api/wishlist/remove`,
+        `${process.env.REACT_APP_APPLICATION_URL}/api/wishlist/remove`,
         {
           method: "DELETE",
           headers: {
@@ -101,7 +96,7 @@ function Wishlist() {
     }
     try {
       const response = await fetch(
-        `http://localhost:5001/api/pet-listing/userads/${currentUser.uid}`
+        `${process.env.REACT_APP_APPLICATION_URL}/api/pet-listing/userads/${currentUser.uid}`
       );
       if (response.ok) {
         const data = await response.json();
@@ -126,7 +121,7 @@ function Wishlist() {
     }
     try {
       const response = await fetch(
-        `http://localhost:5001/api/pet-listing/delete/${_id}`,
+        `${process.env.REACT_APP_APPLICATION_URL}/api/pet-listing/delete/${_id}`,
         {
           method: "DELETE",
           headers: {
@@ -180,7 +175,7 @@ function Wishlist() {
                 if (item.petId && item.petId._id) {
                   handleViewClick(item.petId._id);
                 } else if (isMyads) {
-                  handleViewClick(item._id); 
+                  handleViewClick(item._id);
                 }
               }
             }}
@@ -274,7 +269,6 @@ function Wishlist() {
         </div>
       ));
   };
-
 
   return (
     <div className="wishlist-container">

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../Firebase/config";
 import {
   createUserWithEmailAndPassword,
@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
   const fetchAdminToken = async (uid) => {
     try {
       const response = await fetch(
-        `http://localhost:5001/api/admin/generate-admin-token/${uid}`
+        `${process.env.REACT_APP_APPLICATION_URL}/api/admin/generate-admin-token/${uid}`
       );
       const data = await response.json();
       return data.token; // return the admin token
@@ -68,11 +68,14 @@ export function AuthProvider({ children }) {
   // save user to MongoDB
   const saveUserToMongoDB = async (uid, username, email) => {
     try {
-      const response = await fetch("http://localhost:5001/api/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ uid, username, email }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_APPLICATION_URL}/api/users`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ uid, username, email }),
+        }
+      );
       const data = await response.json();
       console.log("User saved to MongoDB:", data);
     } catch (error) {
@@ -106,7 +109,7 @@ export function AuthProvider({ children }) {
   // track user state without modifying the user object structure
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user || null); 
+      setCurrentUser(user || null);
       setLoading(false);
     });
     return unsubscribe;

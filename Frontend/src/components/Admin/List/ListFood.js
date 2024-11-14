@@ -70,13 +70,16 @@ function ListFood() {
       const token = await currentUser.getIdToken();
       console.log("ID Token:", token);
 
-      const response = await fetch("http://localhost:5001/api/admin/food", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: data,
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_APPLICATION_URL}/api/admin/food`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: data,
+        }
+      );
 
       if (response.ok) {
         const result = await response.json();

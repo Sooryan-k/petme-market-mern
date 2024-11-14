@@ -25,7 +25,7 @@ export default function PlatformUsers() {
         try {
           const token = await currentUser.getIdToken();
           const response = await fetch(
-            "http://localhost:5001/api/admin/users",
+            `${process.env.REACT_APP_APPLICATION_URL}/api/admin/users`,
             {
               method: "GET",
               headers: {
@@ -57,7 +57,7 @@ export default function PlatformUsers() {
     try {
       const token = await currentUser.getIdToken();
       const response = await fetch(
-        `http://localhost:5001/api/admin/delete-user/${uid}`,
+        `${process.env.REACT_APP_APPLICATION_URL}/api/admin/delete-user/${uid}`,
         {
           method: "DELETE",
           headers: {
@@ -83,7 +83,7 @@ export default function PlatformUsers() {
     try {
       const token = await currentUser.getIdToken();
       const response = await fetch(
-        `http://localhost:5001/api/admin/make-admin/${uid}`,
+        `${process.env.REACT_APP_APPLICATION_URL}/api/admin/make-admin/${uid}`,
         {
           method: "POST",
           headers: {
@@ -113,7 +113,7 @@ export default function PlatformUsers() {
     try {
       const token = await currentUser.getIdToken();
       const response = await fetch(
-        `http://localhost:5001/api/admin/remove-admin/${uid}`,
+        `${process.env.REACT_APP_APPLICATION_URL}/api/admin/remove-admin/${uid}`,
         {
           method: "POST",
           headers: {

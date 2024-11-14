@@ -25,7 +25,7 @@ function Cart() {
   const fetchCartItems = async (uid) => {
     try {
       const response = await fetch(
-        `http://localhost:5001/api/cart/user/${uid}`
+        `${process.env.REACT_APP_APPLICATION_URL}/api/cart/user/${uid}`
       );
       if (!response.ok) throw new Error("Failed to fetch cart items");
       const data = await response.json();
@@ -51,13 +51,16 @@ function Cart() {
       toast.error("Please login first");
     } else {
       try {
-        await fetch(`http://localhost:5001/api/cart/remove`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ uid: currentUser.uid, itemId: id }),
-        });
+        await fetch(
+          `${process.env.REACT_APP_APPLICATION_URL}/api/cart/remove`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ uid: currentUser.uid, itemId: id }),
+          }
+        );
         setCartItems(cartItems.filter((item) => item._id !== id));
         fetchCartItems(currentUser.uid);
         toast.success("Item removed from cart");
@@ -79,12 +82,12 @@ function Cart() {
   };
 
   const toggleCheckout = () => {
-    if(!currentUser){
-      toast.error("Please log in to checkout")
-    }else{
+    if (!currentUser) {
+      toast.error("Please log in to checkout");
+    } else {
       setShowCheckout(!showCheckout);
     }
-  }
+  };
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -98,7 +101,7 @@ function Cart() {
       return;
     }
 
-    fetch("http://localhost:5001/api/payment/create-order", {
+    fetch("${process.env.REACT_APP_APPLICATION_URL}/api/payment/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount, currency: "INR" }),

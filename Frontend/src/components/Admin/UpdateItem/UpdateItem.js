@@ -30,7 +30,7 @@ function UpdateItem({ isOpen, toggle, listingId, onUpdateSuccess }) {
         try {
           const token = await currentUser.getIdToken();
           const response = await fetch(
-            `http://localhost:5001/api/admin/food/view/${listingId}`,
+            `${process.env.REACT_APP_APPLICATION_URL}/api/admin/food/view/${listingId}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -91,24 +91,24 @@ function UpdateItem({ isOpen, toggle, listingId, onUpdateSuccess }) {
       data.append("category", formData.category);
       data.append("itemType", formData.itemType);
       data.append("about", formData.about);
-      if (formData.image) data.append("image", formData.image); 
+      if (formData.image) data.append("image", formData.image);
 
       try {
         const token = await currentUser.getIdToken();
         const response = await fetch(
-          `http://localhost:5001/api/admin/food/edit/${listingId}`,
+          `${process.env.REACT_APP_APPLICATION_URL}/api/admin/food/edit/${listingId}`,
           {
             method: "PUT",
             headers: {
-              Authorization: `Bearer ${token}`, 
+              Authorization: `Bearer ${token}`,
             },
-            body: data, 
+            body: data,
           }
         );
 
         if (response.ok) {
           toast.success("Listing updated successfully!");
-          onUpdateSuccess(); 
+          onUpdateSuccess();
           toggle();
         } else {
           toast.error("Error updating listing");
@@ -121,7 +121,6 @@ function UpdateItem({ isOpen, toggle, listingId, onUpdateSuccess }) {
       }
     }
   };
-
 
   const handleClose = () => {
     if (toggle) {

@@ -22,7 +22,7 @@ function Food() {
     const fetchItems = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5001/api/food-items/listed-items"
+          `${process.env.REACT_APP_APPLICATION_URL}/api/food-items/listed-items`
         );
         const data = await response.json();
         setItemListings(Array.isArray(data) ? data : []);
@@ -73,7 +73,7 @@ function Food() {
   };
   //add to cart
   const handleAddToCart = async (itemId, event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
 
     if (!currentUser) {
       console.log("please login first to add to cart");
@@ -82,16 +82,19 @@ function Food() {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/api/cart/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          uid: currentUser.uid,
-          itemId,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_APPLICATION_URL}/api/cart/add`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            uid: currentUser.uid,
+            itemId,
+          }),
+        }
+      );
 
       if (response.status === 201) {
         console.log("Success response received");
@@ -142,7 +145,7 @@ function Food() {
               <CardMedia
                 component="img"
                 height="140"
-                image={item.image || "/static/images/cards/default.jpg"} 
+                image={item.image || "/static/images/cards/default.jpg"}
                 alt={item.fname}
                 className="food-card-image"
               />

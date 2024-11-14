@@ -15,7 +15,7 @@ function ViewPet() {
     const fetchPetDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5001/api/pet-listing/view/${petId}`
+          `${process.env.REACT_APP_APPLICATION_URL}/api/pet-listing/view/${petId}`
         );
         const data = await response.json();
         setPetDetails(data);
@@ -41,16 +41,19 @@ function ViewPet() {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/api/wishlist/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          uid: currentUser.uid,
-          petId,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_APPLICATION_URL}/api/wishlist/add`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            uid: currentUser.uid,
+            petId,
+          }),
+        }
+      );
 
       if (response.status === 201) {
         toast.success("Pet added to wishlist");

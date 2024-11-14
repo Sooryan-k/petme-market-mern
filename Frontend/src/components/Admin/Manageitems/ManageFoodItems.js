@@ -27,12 +27,15 @@ export default function ManageFoodItems() {
       if (currentUser) {
         try {
           const token = await currentUser.getIdToken();
-          const response = await fetch("http://localhost:5001/api/admin/food", {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+          const response = await fetch(
+            `${process.env.REACT_APP_APPLICATION_URL}/api/admin/food`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
           if (response.ok) {
             const data = await response.json();
             setFoodItems(data);
@@ -54,7 +57,7 @@ export default function ManageFoodItems() {
     try {
       const token = await currentUser.getIdToken();
       const response = await fetch(
-        `http://localhost:5001/api/admin/food/delete/${id}`,
+        `${process.env.REACT_APP_APPLICATION_URL}/api/admin/food/delete/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -93,11 +96,14 @@ export default function ManageFoodItems() {
   const handleUpdateSuccess = async () => {
     closeUpdateModal();
     const token = await currentUser.getIdToken();
-    const response = await fetch("http://localhost:5001/api/admin/food", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_APPLICATION_URL}/api/admin/food`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     if (response.ok) {
       const updatedData = await response.json();
       setFoodItems(updatedData);

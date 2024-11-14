@@ -10,7 +10,7 @@ import { toast } from "react-hot-toast";
 import { useAuth } from "../../../context/AuthContext";
 
 function UpdateListing({ isOpen, toggle, listingId, onUpdateSuccess }) {
-  const {currentUser} = useAuth();
+  const { currentUser } = useAuth();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     uid: "",
@@ -30,7 +30,7 @@ function UpdateListing({ isOpen, toggle, listingId, onUpdateSuccess }) {
     const loadListing = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5001/api/pet-listing/view/${listingId}`,
+          `${process.env.REACT_APP_APPLICATION_URL}/api/pet-listing/view/${listingId}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -94,11 +94,11 @@ function UpdateListing({ isOpen, toggle, listingId, onUpdateSuccess }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5001/api/pet-listing/update/${listingId}`,
+        `${process.env.REACT_APP_APPLICATION_URL}/api/pet-listing/update/${listingId}`,
         {
           method: "PUT",
           body: data,
-        },
+        }
       );
       if (response.ok) {
         toast.success("Listing updated successfully!");

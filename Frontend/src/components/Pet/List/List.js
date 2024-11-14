@@ -77,11 +77,11 @@ function List() {
 
     try {
       const response = await fetch(
-        "http://localhost:5001/api/pet-listing/create",
+        `${process.env.REACT_APP_APPLICATION_URL}/api/pet-listing/create`,
         {
           method: "POST",
           body: data,
-        },
+        }
       );
       if (response.ok) {
         const result = await response.json();

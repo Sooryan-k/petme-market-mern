@@ -14,7 +14,7 @@ function ViewFood() {
     const fetchItemDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5001/api/food-items/view/${itemId}`
+          `${process.env.REACT_APP_APPLICATION_URL}/api/food-items/view/${itemId}`
         );
         const data = await response.json();
         setItemDetails(data);
@@ -35,7 +35,6 @@ function ViewFood() {
 
   //add to cart
   const handleAddToCart = async (itemId) => {
-
     if (!currentUser) {
       console.log("please login first to add to cart");
       toast.error("Please log in to add to cart");
@@ -43,16 +42,19 @@ function ViewFood() {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/api/cart/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          uid: currentUser.uid,
-          itemId,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_APPLICATION_URL}/api/cart/add`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            uid: currentUser.uid,
+            itemId,
+          }),
+        }
+      );
 
       if (response.status === 201) {
         console.log("Success response received");
