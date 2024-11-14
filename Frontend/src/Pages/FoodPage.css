@@ -1,0 +1,30 @@
+.food-page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 10; 
+}
+
+.banner-container {
+  top: 0;
+  background-color: #034b94;
+  width: 100%;
+}
+.content-wrapper {
+  margin-top: 30px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+.footer-container {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}

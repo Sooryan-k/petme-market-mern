@@ -1,0 +1,38 @@
+body,
+html {
+  margin-top: 32px;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+}
+@media (max-width:480px) {
+  body{
+    margin-top: 64px;
+  }
+}
+@media (max-width:1050px) {
+  body{
+    margin-top: 70px;
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.foodBanner-container-fluid {
+  width: 100%;
+}
+
+.foodBanner-row {
+  width: 100%;
+  padding-top: 0;
+}
+
+.foodBanner-image {
+  width: 100vw;
+  height: auto;
+  display: block;
+  margin: 0;
+}

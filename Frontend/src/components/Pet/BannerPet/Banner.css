@@ -1,0 +1,36 @@
+body,
+html {
+  margin-top: 32px;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+@media (max-width:480px) {
+  body{
+    margin-top: 64px;
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.petBanner-container-fluid {
+ width: 100%;
+}
+
+.petBanner-row {
+  width: 100%;
+  padding-top: 0;
+}
+
+.petBanner-image {
+  width: 100vw;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+
+

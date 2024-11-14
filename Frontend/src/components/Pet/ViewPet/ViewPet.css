@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f6f8;
+}
+
+.petView-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.petView-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.petView-image-div {
+  flex: 1;
+  max-width: 50%;
+  height: 550px;
+  background-color: #f0f4f8;
+  /* border-radius: 5px; */
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.petView-image-div img {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.petView-details-container {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.petView-price-and-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.petView-price {
+  font-size: 32px;
+  color: #0f0502;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.petView-buttons-row {
+  display: flex;
+  gap: 10px;
+}
+
+.petView-back-btn,
+.petView-fav-btn {
+  background-color: #519f15;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.petView-back-btn:hover,
+.petView-fav-btn:hover {
+  background-color: #153e75;
+}
+
+.petView-fav-btn {
+  background-color: #267adb;
+}
+
+.petView-breed-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  display: block;
+}
+
+.petView-category {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 500;
+  padding: 1px 1px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.petView-description-box {
+  padding: 15px;
+  background-color: #f8fafc;
+  border-left: 4px solid #b50b0b;
+  border-right: 4px solid #b50b0b;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.petView-description-box h5 {
+  margin-bottom: 8px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.petView-description-box p {
+  color: #555555;
+  word-wrap: break-word;
+}
+
+.petView-seller-details {
+  padding: 15px;
+  background-color: #f8fafc;
+  border: 1px solid #0f3a05;
+  border-radius: 8px;
+}
+
+.petView-seller-details h5 {
+  margin-bottom: 8px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.petView-seller-details span {
+  display: block;
+  color: #495057;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.petView-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: #eef2ff;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #0c76c2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-top: auto;
+}
+
+.petView-location i {
+  color: #557deb;
+}
+
+@media (max-width: 768px) {
+  .petView-container {
+    margin: 80px 15px;
+  }
+
+  .petView-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .petView-details-container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .petView-image-div {
+    max-width: 100%;
+  }
+
+  .petView-price {
+    font-size: 24px;
+  }
+
+  .petView-breed-name {
+    font-size: 18px;
+  }
+
+  .petView-back-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .petView-location {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .petView-container {
+    margin: 0;
+  }
+
+  .petView-price {
+    font-size: 20px;
+  }
+
+  .petView-breed-name {
+    font-size: 16px;
+  }
+
+  .petView-description-box,
+  .petView-seller-details,
+  .petView-location {
+    padding: 12px;
+  }
+}

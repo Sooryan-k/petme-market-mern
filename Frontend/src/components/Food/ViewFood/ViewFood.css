@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f6f8;
+}
+
+.foodview-view-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.foodview-view-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.foodview-image-container {
+  flex: 1;
+  height: 550px;
+  max-width: 50%;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foodview-image {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.foodview-info-container {
+  flex: 1;
+  max-width: 50%;
+  padding: 20px;
+}
+
+.foodview-price-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  gap: 10px; 
+  margin-bottom: 20px;
+}
+
+.foodview-price {
+  font-size: 32px;
+  color: #0f0502;
+  font-weight: bold;
+  margin-right: auto; 
+}
+
+.backview-home-btn,
+.view-cart-btn {
+  background-color: #519f15;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.backview-home-btn:hover,
+.view-cart-btn:hover {
+  background-color: #153e75;
+}
+
+.view-cart-btn {
+  background-color: #267adb;
+}
+
+.foodview-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.foodview-category {
+  font-size: 14px;
+  color: #555555;
+  background-color: #e9eff5;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.foodview-description-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8fafc;
+  border-left: 4px solid #b50b0b;
+  border-right: 4px solid #b50b0b;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.foodview-description-box h4 {
+  margin-bottom: 8px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.foodview-description-box p {
+  color: #555555;
+  word-wrap: break-word;
+}
+
+.foodview-seller-details {
+  padding: 15px;
+  background-color: #f8fafc;
+  border: 1px solid #0f3a05;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.foodview-seller-details h4 {
+  margin-bottom: 8px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.foodview-seller-details p {
+  color: #555555;
+}
+
+.foodview-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background-color: #eef2ff;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #0c76c2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.foodview-location i {
+  color: #557deb;
+}
+
+@media (max-width: 768px) {
+  .foodview-view-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foodview-info-container {
+    max-width: 100%;
+  }
+
+  .foodview-image-container {
+    max-width: 100%;
+  }
+
+  .foodview-price {
+    font-size: 24px;
+  }
+
+  .foodview-name {
+    font-size: 18px;
+  }
+
+  .back-home-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .foodview-view-container {
+    margin: 0;
+  }
+
+  .foodview-price {
+    font-size: 20px;
+  }
+
+  .foodview-name {
+    font-size: 16px;
+  }
+
+  .foodview-description-box,
+  .foodview-seller-details,
+  .foodview-location {
+    padding: 12px;
+  }
+}

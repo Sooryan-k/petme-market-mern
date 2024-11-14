@@ -1,0 +1,188 @@
+.home-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+.section {
+  margin-top: 30px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter-title {
+  font-weight: bold;
+  color: #024ea0;
+  margin-right: 15px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto; 
+}
+
+.filter-buttons::-webkit-scrollbar {
+  display: none; 
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #034b94;
+}
+.card-row-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 10px;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.card-row-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.custom-card {
+  flex: 0 0 180px;
+  max-width: 180px;
+  padding: 10px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+}
+
+.custom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.custom-card .MuiCardHeader-root {
+  padding: 5px;
+  background: linear-gradient(135deg, #f1f3f5 0%, #e0e7ff 100%);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title-with-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+}
+
+.pet-title {
+  font-size: 19px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1; 
+  margin-right: 8px;
+  min-width: 0; 
+}
+
+.pet-price {
+  font-size: 15px;
+  font-weight: bold;
+  color: #071e83;
+  white-space: nowrap;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  min-width: 0;
+  margin-left: auto;
+}
+
+.custom-card .MuiCardMedia-root {
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-card .MuiCardContent-root {
+  padding: 12px;
+  color: #333;
+}
+
+.custom-card .MuiCardContent-root .MuiTypography-root {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+.fav-icon {
+  border: 1px solid black;
+  margin-top: 10px;
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+}
+
+.fav-icon:hover {
+  background-color: #3c83e7;
+  color: #fff;
+}
+
+.heart {
+  color: #f4cc2d;
+}
+
+@media (max-width: 767px) {
+  .custom-card {
+    min-height: 345px;
+    min-width: 240px;
+  }
+  .section-title {
+    margin: 10px;
+  }
+  .filter-buttons {
+    gap: 5px;
+  }
+  .filter-buttons button {
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 100px; 
+    height: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .custom-card {
+    flex: 0 0 220px;
+    max-width: 240px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .custom-card {
+    flex: 0 0 240px;
+    max-width: 240px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-card {
+    flex: 0 0 250px;
+    max-width: 240px;
+  }
+}
