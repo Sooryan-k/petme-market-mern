@@ -1,14 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-require("./db/connection");
-const userRoutes = require("./routes/user");
-const petListingRoutes = require("./routes/petListing");
-const wishlistRoutes = require("./routes/wishlist");
-const adminRoutes = require("./routes/adminRoutes");
-const foodRoutes = require ("./routes/foodRoutes")
-const cartRoutes = require ("./routes/cartRoutes")
-const razorpayRoutes = require("./routes/razorpayRoutes");
+require("../db/connection");
+const userRoutes = require("../routes/user");
+const petListingRoutes = require("../routes/petListing");
+const wishlistRoutes = require("../routes/wishlist");
+const adminRoutes = require("../routes/adminRoutes");
+const foodRoutes = require ("../routes/foodRoutes")
+const cartRoutes = require ("../routes/cartRoutes")
+const razorpayRoutes = require("../routes/razorpayRoutes");
 
 const app = express();
 app.use(cors());
@@ -36,7 +36,5 @@ app.use("/api/cart",cartRoutes)
 
 app.use("/api/payment", razorpayRoutes);
 
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-  console.log(`server is running on port ${PORT}`);
-});
+
+module.exports = app; 
