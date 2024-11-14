@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 //for handling user-related endpoints
-app.use("/api/", userRoutes);
+app.use("/api", userRoutes);
 
 //listing
 app.use("/api/pet-listing", petListingRoutes);
