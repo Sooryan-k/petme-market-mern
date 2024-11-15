@@ -226,7 +226,7 @@ export default function NavbarPet() {
                     <SearchIcon />
                   </SearchIconWrapper>
                   <StyledInputBase
-                    placeholder="Search Pets ,Foods...."
+                    placeholder="Search..."
                     inputProps={{ "aria-label": "search" }}
                   />
                 </Search>
