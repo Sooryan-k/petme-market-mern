@@ -194,8 +194,8 @@ export default function NavbarPet() {
         position="fixed"
         sx={{
           backgroundColor: "#034b94",
-          maxHeight: { xs: "96px", lg: "64px", md: "100px" },
-          minHeight: { xs: "96px", lg: "64px", md: "100px" },
+          maxHeight: { xs: "103px", lg: "64px", md: "100px" },
+          minHeight: { xs: "103px", lg: "64px", md: "100px" },
         }}
       >
         <Toolbar

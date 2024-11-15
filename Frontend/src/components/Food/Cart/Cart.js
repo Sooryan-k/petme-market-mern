@@ -101,7 +101,7 @@ function Cart() {
       return;
     }
 
-    fetch("${process.env.REACT_APP_APPLICATION_URL}/api/payment/create-order", {
+    fetch(`${process.env.REACT_APP_APPLICATION_URL}/api/payment/create-order`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount, currency: "INR" }),

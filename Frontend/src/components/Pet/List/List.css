@@ -89,6 +89,34 @@
     max-width: 90%;
     margin: 10px;
   }
+  .modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.form-container {
+  margin-top: 20px; 
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  max-height: 100vh; 
+  overflow-y: auto; 
+  position: relative;
+}
+
 
   .submission-form h2 {
     font-size: 18px;

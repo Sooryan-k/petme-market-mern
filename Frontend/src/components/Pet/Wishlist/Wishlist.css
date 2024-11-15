@@ -29,7 +29,6 @@ body, .wishlist-container {
 
 .wishlist-tabs {
   position: sticky;
-  /* top: 60px; */
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -118,7 +117,6 @@ body, .wishlist-container {
   width: 100%;
   height: 150px;
   object-fit: cover;
-  margin-bottom: 10px;
 }
 
 .wishlist-card-header {
@@ -244,16 +242,17 @@ body, .wishlist-container {
   .wishlist-cards-container {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    padding: 10px;
     margin-top: 10px;
+    padding: 0;
   }
 
   .wishlist-card-item {
-    min-width: 180px;
-    max-width: 180px;
-    max-height: 320px;
-    min-height: 320px;
-    margin: 10px 0;
+    min-width: 170px;
+    max-width: 170px;
+    max-height: 310px;
+    min-height: 310px;
+    margin: 5px 0;
+    padding: 5px;
   }
 
   .wishlist-card-item img {

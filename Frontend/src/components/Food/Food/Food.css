@@ -1,3 +1,5 @@
+
+
 .food-container {
   padding: 20px;
 }
@@ -155,9 +157,6 @@
   .food-card {
     min-width: 100%;
   }
- .food-filter-container {
-    padding: 0 10px; 
-  }
    .food-filter-container {
     padding: 0 15px; 
     gap: 8px; 
@@ -174,6 +173,7 @@
   .food-card {
     min-width: 100%;
   }
+  
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .food-card-grid {
@@ -205,3 +205,39 @@
   }
 }
 
+@media (max-width: 450px) {
+  .food-container {
+    padding: 0px;
+  }
+
+  .food-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: px;
+  }
+
+  .food-card {
+    min-width: 100%;
+    margin: 1px 0; 
+  }
+
+  .food-filter-button {
+  flex: 1 1 auto;
+  max-width: 100px;
+  height: 45px;
+  font-size: 7px;
+}
+
+.food-filter-buttons {
+    margin-left: 10px;
+    
+  }
+   .food-filter-title {
+  margin: 0;
+  font-size: 15px;
+}
+  .food-section-title,
+  .food-filter-title {
+    padding: 0 ;
+  }
+}

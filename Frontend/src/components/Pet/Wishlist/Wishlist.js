@@ -185,7 +185,10 @@ function Wishlist() {
                 <div className="wishlist-title-container">
                   <Typography
                     className="wishlist-card-title"
-                    sx={{ fontSize: "17px", fontWeight: "bold" }}
+                    sx={{
+                      fontSize: { xs: "15px", md: "17px", lg: "18px" },
+                      fontWeight: "bold",
+                    }}
                   >
                     {isWishlist
                       ? item.petId?.bname.length > 8
@@ -197,7 +200,10 @@ function Wishlist() {
                   </Typography>
                   <Typography
                     className="wishlist-card-price"
-                    sx={{ fontSize: "16px", fontWeight: "bold" }}
+                    sx={{
+                      fontSize: { xs: "14px", md: "16px", lg: "17px" },
+                      fontWeight: "bold",
+                    }}
                   >
                     {`₹${
                       (isWishlist ? item.petId?.price : item.price).toString()

@@ -25,5 +25,13 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/payment", razorpayRoutes);
 
 
+
+// Run the server locally
+
+// const PORT = process.env.PORT || 5001;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
+
 // exporting the app for Vercel
 module.exports = app;
