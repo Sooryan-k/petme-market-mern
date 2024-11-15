@@ -11,8 +11,20 @@ const foodRoutes = require("../routes/foodRoutes");
 const cartRoutes = require("../routes/cartRoutes");
 const razorpayRoutes = require("../routes/razorpayRoutes");
 
-const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "https://petmebysooryan.vercel.app",
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
+
 app.use(express.json());
 
 // routes
@@ -24,14 +36,6 @@ app.use("/api/food-items", foodRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/payment", razorpayRoutes);
 
-
-
-// Run the server locally
-
-// const PORT = process.env.PORT || 5001;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on http://localhost:${PORT}`);
-// });
 
 // exporting the app for Vercel
 module.exports = app;

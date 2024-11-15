@@ -113,11 +113,11 @@ export default function ManageFoodItems() {
   if (loading) return <Typography>Loading food items...</Typography>;
 
   return (
-    <Box>
+    <Box sx={{ padding: "0" }}>
       <Typography variant="h4" gutterBottom>
         Manage Food Items
       </Typography>
-      <TableContainer component={Paper}>
+      <TableContainer sx={{ padding: "10px" }} component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
