@@ -11,6 +11,8 @@ const foodRoutes = require("../routes/foodRoutes");
 const cartRoutes = require("../routes/cartRoutes");
 const razorpayRoutes = require("../routes/razorpayRoutes");
 
+
+const app = express();
 const allowedOrigins = [
   "https://petmebysooryan.vercel.app",
 ];
